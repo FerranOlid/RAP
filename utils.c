@@ -2,8 +2,6 @@
 
 void read_header(char* path, struct header* h) {
 	int sfile;
-	int v, l;
-	bool d;
 
 	sfile = open(path, O_RDONLY);
 	
@@ -15,21 +13,30 @@ void read_header(char* path, struct header* h) {
 
 	// Starting to read the header
 	// Reading voices first
-	if ( (read(sfile, &v, sizeof(int))) < 0  ) {
+	if ( (read(sfile, &h.voices, sizeof(int))) < 0  ) {
 		printf("Error while reading header");
 		return;
 	}
 
 	// Reading drums existance
-	if ( (read(sfile, &d, sizeof(bool))) < 0  ) {
+	if ( (read(sfile, &h.drums, sizeof(bool))) < 0  ) {
 		printf("Error while reading header");
 		return;
 	}
 
-	if ( (read(sfile, &l, sizeof(int))) < 0  ) {
+	if ( (read(sfile, &h.length, sizeof(int))) < 0  ) {
 		printf("Error while reading header");
 		return;
 	}
+
+	if ( (read(sfile, &h.tempo, sizeof(int))) < 0  ) {
+		printf("Error while reading header");
+		return;
+	}
+}
+
+void load_note_database() {
+	
 }
 
 #endif
