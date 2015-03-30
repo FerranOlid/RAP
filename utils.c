@@ -12,6 +12,7 @@ void read_header(char* path, struct header* h) {
 	}
 
 	// Starting to read the header
+	// @FIXME: First of all should check if RAP file (maybe first bytes should be "imarap"?)
 	// Reading voices first
 	if ( (read(sfile, &h.voices, sizeof(int))) < 0  ) {
 		printf("Error while reading header");
