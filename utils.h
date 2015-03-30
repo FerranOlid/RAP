@@ -62,9 +62,3 @@ struct Note {
  * the struct h
  */
 void read_header(char* path, struct header* h);
-
-/* The following functions loads the notes database in the memmory
- *
- */
-void load_note_database();
-

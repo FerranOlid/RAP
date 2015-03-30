@@ -35,8 +35,4 @@ void read_header(char* path, struct header* h) {
 	}
 }
 
-void load_note_database() {
-	
-}
-
 #endif
