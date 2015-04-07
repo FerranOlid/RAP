@@ -5,18 +5,22 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <errno.h>
 #include <string.h>
 #include "libs/uthash.h"		// Hash library
 #include "notes.h"				// Notes database
 
 /* This file contains a serie of useful functions for the RA programs
  * to work. This software was first developed by Ferran Olid under the
- * GLP/GNU license.
+ * GNU/GLP license.
  */
 
+// Defining bool stuff
 typedef unsigned char bool;
 #define true 1
 #define false 0
+
+#define DEBUG 1
 
 // Structs and other definitions
 
@@ -26,6 +30,8 @@ typedef unsigned char bool;
 	int up;
 	CDown down;
 };*/
+
+//#define HEADER_LENGTH	69	// Useful in a near future while reading header (buffer idea)
 
 //Song config
 struct Header {
